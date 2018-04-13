@@ -1,1 +1,1 @@
-worker: node server/server.js
+web: yarn start:prod
