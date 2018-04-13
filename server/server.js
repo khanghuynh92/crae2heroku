@@ -5,7 +5,7 @@ const path = require('path');
 const app = express()
 
 const host = '0.0.0.0';
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
