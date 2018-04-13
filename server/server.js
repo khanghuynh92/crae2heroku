@@ -5,6 +5,7 @@ const path = require('path');
 const app = express()
 
 const host = '0.0.0.0';
+const port = 3001;
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
@@ -30,7 +31,7 @@ app.use(router)
 app.use('/*', staticFiles)
 
 
-app.set('port', (process.env.PORT || 3001, host))
+app.set('port', (port, host))
 app.listen(app.get('port'), () => {
   console.log(`Listening on ${app.get('port')}`)
 })
