@@ -3,6 +3,8 @@ import express from 'express'
 import path from 'path'
 const app = express()
 
+const host = '0.0.0.0';
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
@@ -26,7 +28,8 @@ app.use(router)
 // any routes not picked up by the server api will be handled by the react router
 app.use('/*', staticFiles)
 
-app.set('port', (process.env.PORT || 3001))
+
+app.set('port', (process.env.PORT || 3001, host))
 app.listen(app.get('port'), () => {
   console.log(`Listening on ${app.get('port')}`)
 })
